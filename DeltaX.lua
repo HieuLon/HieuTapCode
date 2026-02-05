@@ -1,3 +1,6 @@
+print("DeltaX script loaded!")
+
+
 --[[
     Title: DeltaPvP Framework - Core Kernel
     Author: Lead Engineer
@@ -1477,3 +1480,21 @@ DeltaPvP:RegisterService("UI", UI)
 -- 8. BOOTSTRAP
 --------------------------------------------------------------------------------
 DeltaPvP:Initialize()
+-- GIẢ LẬP MENU HIỆN LÊN
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Name = "DeltaXMenu"
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+frame.Parent = gui
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1,0,0,30)
+title.Text = "DeltaX PvP AI"
+title.TextColor3 = Color3.new(1,1,1)
+title.Parent = frame
